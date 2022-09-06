@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E-voting system</title>
+    <meta name= "viewport" width="device-width" initial-scale="no"/>
+     
+    <link rel="stylesheet" href="Assignment.css">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="script" href="./sw.js">
+  </head>
+  <script> 
+  sessionStorage.setItem("Aadhar Number", "AadharNumber");
+  let value=sessionStorage.getItem("Aadhar Number");
+  function submission(){
+   if (value == sessionStorage.getItem("Aadhar Number")){
+    alert("Aadhar Number exists");
+     } 
+    }
+  </script>  
+  <body>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then(function (registration) {
+            console.log("success load");
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+       }
+    </script>
+    <div id="form" name="myform" onchange="return validateVoterID(this)">
+        <fieldset>
+            <legend><h1>Voting Management System</h1></legend>
+            <label>Name:</label>&nbsp;
+            <input type="text" name="Name" placeholder="Enter Your Name" required><br><br>
+
+            <label>Father Name:</label>&nbsp;
+            <input type="text" name="Father Name" placeholder="Enter Your Father Name" required><br><br>
+
+            <label>DOB:</label>&nbsp;
+            <input type="text" name="DOB" placeholder="Enter Your date of birth" required><br><br>
+
+            <label>Gender:</label>&nbsp;
+            <input type="radio" name="Gender" class="g" value="male">Male
+            <input type="radio" name="Gender" class="g" value="female" checked>Female
+            <br><br>
+
+            <label>Aadhar number:</label>&nbsp;
+            <input type="text" name="AadharNumber" placeholder="Enter Your Aadhar-Number"  required ><br><br>
+
+            <label>Political Parties:</label>&nbsp;
+            <select name="Political">
+             <option value="Null">Choose Political Party</option>
+              <option value="Bjp">BJP</option>
+              <option value="Congress">Congress</option>
+              <option value="Aap">AAP</option>
+              <option value="Rjd">RJD</option>
+              <option value="Akali Dal">Akali Dal</option>
+            </select>
+            <br><br>
+            <button onclick="submission();">Submit</button>
+        </fieldset>
+    </div>
+
+  </body>
+
+</html>

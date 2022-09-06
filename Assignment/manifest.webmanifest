@@ -1,0 +1,30 @@
+{
+    "name":"E-voting Management System",
+
+    "short_name":"E-vote",
+   
+    "start_url":"http://127.0.0.1:5500/Assignment.html/",
+    "scope":"http://127.0.0.1:5500/Assignment.html",
+    "prefer_related_applications": true,
+    "display":"standalone",
+    "icons":[
+        {
+            "src": "./images/square.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          },
+          {
+            "src": "./images/apps.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          },
+          {
+            "src": "./images/heart.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          }
+    ],
+    "background_color":"grey",
+    "theme_color":"white"
+  
+}
